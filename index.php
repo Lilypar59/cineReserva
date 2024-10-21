@@ -17,12 +17,12 @@
         </div>
         <div class="p-6 space-y-4">
             <a
-                href="login.php"
+                href="Login.php"
                 class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Iniciar Sesión
             </a>
             <a
-                href="register.php"
+                href="Register.php"
                 class="block w-full text-center bg-transparent hover:bg-blue-700 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                 Crear Cuenta
             </a>

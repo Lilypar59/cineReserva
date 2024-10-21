@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_movie'])) {
     $description = $_POST['description'];
     $duration = $_POST['duration'];
 
-    $sql = "INSERT INTO movies (title, description, duration) VALUES ('$title', '$description', $duration)";
+    $sql = "INSERT INTO movies (title, description, duration,showtimes ) VALUES ('$title', '$description', $duration,'$showtimes')";
     if ($conn->query($sql) === TRUE) {
         echo "Nueva película agregada.";
     } else {
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit_movie'])) {
                 <input type="number" name="duration" placeholder="Duración (minutos)" required class="w-full px-3 py-2 border rounded-md">
                 <input
                     type="text"
-                    name="image_url"
+                    name="showtimes"
                     placeholder="URL de la imagen"
                     required
                     class="w-full px-3 py-2 border rounded-md" />
@@ -159,19 +159,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['edit_movie'])) {
                                 <input class="w-full px-3 py-2 border rounded-md" type="text" name="title" value="<?php echo $movie['title']; ?>" required>
                                 <input class="w-full px-3 py-2 border rounded-md" type="text" name="description" value="<?php echo $movie['description']; ?>" required>
                                 <input class="w-full px-3 py-2 border rounded-md" type="number" name="duration" value="<?php echo $movie['duration']; ?>" required>
-                                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300" type="submit" name="edit_movie">Guardar Cambios</button>
-                            </form>
+
+                                <input class="w-full px-3 py-2 border rounded-md" type="text" name="showtimes" value="<?php echo $movie['duration']; ?>" required>
+
+
                         </div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300" type="submit" name="edit_movie">Guardar Cambios</button>
+                        </form>
                     </div>
-
-
-
-
-
-                <?php endforeach; ?>
-
             </div>
+
+
+
+
+
+        <?php endforeach; ?>
+
         </div>
+    </div>
     </div>
 
 
